@@ -35,6 +35,6 @@
 /  @see .log.cfg.levels
 /  @example .log.info
 .log.i.build:{
-	set ./: ({` sv `.log,lower x};.log.i.msg)@\:/:key .log.cfg.levels;	
+	(set) ./: ({` sv `.log,lower x};.log.i.msg)@\:/:key .log.cfg.levels;	
  };
 
