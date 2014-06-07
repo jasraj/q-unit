@@ -1,29 +1,27 @@
-# README #
+# q-unit - Unit Testing for kdb #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This repository contains the q-unit and qamcrest libraries for use to perform unit testing for kdb+/q applications.
 
-### What is this repository for? ###
+This document will run through what is provided as part of these libraries and a step-by-step guide on how to write tests and integrate them with any current kdb application.
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+## Licensing ##
 
-### How do I get set up? ###
+Copyright (c) 2014, Jaskirat M.S. Rajasansir. All rights reserved.
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+The code is licensed (see `LICENSE`) under the **BSD (3-Clause) License**.
 
-### Contribution guidelines ###
+## Overview ##
 
-* Writing tests
-* Code review
-* Other guidelines
+### q-unit ###
 
-### Who do I talk to? ###
+### qamcrest ###
 
-* Repo owner or admin
-* Other community or team contact
+## Writing Tests ##
+
+## Extending `qamcrest` ##
+
+## Integrating With Your Application ##
+
+## Using `q-unit` With TeamCity ##
+
+
