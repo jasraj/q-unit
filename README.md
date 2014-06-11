@@ -1,6 +1,6 @@
 # q-unit - Unit Testing for kdb #
 
-This repository contains the q-unit and qamcrest libraries for use to perform unit testing for kdb+/q applications.
+This repository contains the `q-unit` and `qamcrest` libraries for use to perform unit testing for kdb+/q applications.
 
 This document will run through what is provided as part of these libraries and a step-by-step guide on how to write tests and integrate them with any current kdb application.
 
@@ -18,10 +18,10 @@ The code is licensed (see `LICENSE`) under the **BSD (3-Clause) License**.
 
 ## Writing Tests ##
 
-## Extending `qamcrest` ##
+## Extending qamcrest ##
 
 ## Integrating With Your Application ##
 
-## Using `q-unit` With TeamCity ##
+## Using q-unit With TeamCity ##
 
 
