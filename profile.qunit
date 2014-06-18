@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+export QUNIT_HOME=/home/jas/git/q-unit
