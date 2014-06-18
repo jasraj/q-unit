@@ -6,8 +6,6 @@
 
 // DOCUMENTATION:
 
-.require.cfg.rootEnvVar:`QUNIT_HOME;
-
 .require.cfg.root:`;
 
 .require.fileSuffixes:(".q";".k";".q_";".*.q";".*.q_");
@@ -18,26 +16,29 @@
 
 / Validates the required root folder location variable is set. If not, an error
 / is thrown and the library will not initialise.
+/  @param qunitRoot (Symbol) The path of the qunit root folder
 /  @throws QunitRootFolderNotSetException If the root folder is not set
 /  @see .require.cfg.root
 /  @see .require.paths.config
 /  @see .require.paths.code
-.require.init:{
-	if[null .require.cfg.root;
-		if[""~getenv .require.cfg.rootEnvVar;
-			.require.logError "The qunit root folder must be defined before attempting to run it!";
-			.require.logError " Set '.require.cfg.root' or environment variable 'QUNIT_HOME'";
-			'"QunitRootFolderNotSetException";
-		];
-
-		.require.cfg.root:`$getenv .require.cfg.rootEnvVar;
+.require.init:{[qunitRoot]
+	
+	if[null qunitRoot;
+		.require.logError "The qunit root folder must be defined before attempting to run it!";
+		.require.logError " Set '.require.cfg.root' or environment variable 'QUNIT_HOME'";
+		'"QunitRootFolderNotSetException";
 	];
 
-	.require.logInfo "Initialising code loader library";
-	.require.loginfo " Framework root: ",string .require.cfg.root;
-
+	.require.cfg.root:qunitRoot;
 	.require.paths.config:` sv .require.cfg.root,`config;
 	.require.paths.code:` sv/:,\[.require.cfg.root;`code`lib];
+
+	.require.logInfo "Code loader library successfully initialised";
+	.require.logInfo " Root path:\t",string .require.cfg.root;
+	.require.logInfo " Code paths:\t"," | " sv string .require.paths.code;
+	.require.logInfo " Config path:\t",string .require.paths.config;
+
+
  };
 
 / Loads all files matching the specified library name
@@ -53,6 +54,11 @@
 	}[;lib] each .require.paths.code; 
 
 	.require.load each distinct files;
+
+	initF:` sv `,lib,`init;
+	.require.logInfo "Initialising library '",string[lib],"' (",string[initF],")";
+
+	@[get initF;::;{ .require.logError "Failed to initalise library '",string[y],"' (",string[z],"). Error - ",x; '"LibraryFailedToInitException (",string[y],")"; }[;lib;initF] ];
  };
 
 / Loads all files mataching the specified configuration name. NOTE: Expects the configuration
