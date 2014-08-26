@@ -25,3 +25,7 @@
 .boot.i.loadCoreLibs:{
 	.require.lib each .boot.cfg.coreLibs;
  };
+
+.boot.i.parseInputArgs:{
+	inArgs:first each .Q.opt .z.x;
+ };
