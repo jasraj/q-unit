@@ -3,7 +3,7 @@
 # q-unit Profile
 
 # Copyright (c) 2014, Jaskirat M.S. Rajasansir
-# Licensed under the BSD (3-Clause) License (see LICENSE)
+# License BSD, see LICENSE for details
 
 # DOCUMENTATION:
 
