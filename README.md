@@ -20,10 +20,4 @@ This document will run through what is provided as part of these libraries and a
 
 ### Using q-unit With TeamCity ###
 
-### Licensing ###
-
-Copyright (c) 2014 Jaskirat M.S. Rajasansir
-
-License BSD, see `LICENSE` for details
-
 [![Analytics](https://ga-beacon.appspot.com/UA-54104883-3/q-unit/README)](https://github.com/jasraj/q-unit)
