@@ -1,0 +1,45 @@
+<project name="q-unit Test Runner (ANT)" basedir="." default="main">
+  <!-- q-unit -->
+  <!--  Unit Test Runner (ANT-based) -->
+  <!-- Copyright (C) 2014 Jaskirat M.S. Rajasansir -->
+  <!-- License BSD, see LICENSE for details -->
+  
+  <property environment="env"/>
+  
+  <target name="main">
+    <antcall target="printBootInfo"/>
+    <antcall target="printStartTime"/>
+    
+    <antcall target="runTests"/>
+    
+    <antcall target="printFinishTime"/>
+  </target>
+  
+  <target name="runTests">
+    <!-- TODO: Actually run the tests -->
+  </target>
+  
+  <target name="printBootInfo"/>
+    <echo level="info">
+      ** q-unit Test Runner (ANT-based) **
+      
+      OS:   ${os.name} ${os.arch} ${os.version}
+    </echo>
+  </target>
+  
+  <target name="printStartTime">
+    <tstamp>
+      <format property="current.time" pattern="yyyy.MM.dd HH:mm:ss.SSS zzz" />
+    </tstamp>
+    
+    <echo level="info">Start Time: ${current.time}</echo>
+  </target>
+  
+  <target name="printEndTime">
+    <tstamp>
+      <format property="current.time" pattern="yyyy.MM.dd HH:mm:ss.SSS zzz" />
+    </tstamp>
+    
+    <echo level="info">End Time: ${current.time}</echo>
+  </target>
+</project>
